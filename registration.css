@@ -1,0 +1,156 @@
+/* RESET + LAYOUT */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #f7f8fc, #ddefff);
+  color: #333;
+}
+
+/* HEADER SECTION */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffffcc;
+  padding: 10px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff6f00;
+}
+
+nav a {
+  text-decoration: none;
+  margin: 0 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* DROPDOWN MENU */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  z-index: 1000;
+  min-width: 160px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  padding: 10px 15px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+}
+
+/* MAIN SECTION */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.logo-img {
+  width: 300px;
+  max-width: 100%;
+  animation: fadeIn 1.5s ease;
+  margin-bottom: 0px;
+}
+
+/* ANIMATED LINE */
+.animated-line {
+  width: 0;
+  height: 7px;
+  background-color: #0077cc;
+  animation: lineGrow 1s ease forwards;
+  margin-bottom: 0px;
+}
+
+@keyframes lineGrow {
+  from { width: 0; }
+  to { width: 180px; }
+}
+
+/* TAGLINE */
+.tagline {
+  font-size: 28px;
+  color: #0077cc;
+  animation: typing 3s steps(22, end);
+  white-space: nowrap;
+  overflow: hidden;
+  width: 22ch;
+  margin-bottom: 40px;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 22ch; }
+}
+
+/* BUTTONS */
+.btn-container {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  background: #0077cc;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #005fa3;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .btn-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav a {
+    margin: 0 8px;
+  }
+
+  .logo-img {
+    width: 240px;
+  }
+
+  .tagline {
+    font-size: 24px;
+    width: 20ch;
+  }
+}
